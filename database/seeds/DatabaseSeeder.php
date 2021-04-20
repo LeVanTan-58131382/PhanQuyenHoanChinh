@@ -25,8 +25,20 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 "id" => 2,
-                "name" => "vantan",
-                "email" => "vantan@gmail.com",
+                "name" => "dev",
+                "email" => "dev@gmail.com",
+                "password" => '$2y$10$pl7AlLMo/271PcxMHAqDyu7MgJbAaNahoSee.MKwJbd9gWtveMahu',
+            ],
+            [
+                "id" => 3,
+                "name" => "customer",
+                "email" => "customer@gmail.com",
+                "password" => '$2y$10$pl7AlLMo/271PcxMHAqDyu7MgJbAaNahoSee.MKwJbd9gWtveMahu',
+            ],
+            [
+                "id" => 4,
+                "name" => "subadmin",
+                "email" => "subadmin@gmail.com",
                 "password" => '$2y$10$pl7AlLMo/271PcxMHAqDyu7MgJbAaNahoSee.MKwJbd9gWtveMahu',
             ],
         ];
@@ -44,16 +56,20 @@ class DatabaseSeeder extends Seeder
                 "id" => 3,
                 "name" => "Khách hàng",
             ],
+            [
+                "id" => 4,
+                "name" => "Quản lý",
+            ],
         ];
 
         $permissions = [
             // permissions for product
             [
                 "id" => 1,
-                "name" => "product-manage",
+                "name" => config("permission.access.PRODUCT-MANAGE"),
                 "name-display" => "Quản lý Sản phẩm",
                 "key-code-name" => "product-manage",
-                "group" => "product",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 1,
             ],
             [
@@ -61,31 +77,31 @@ class DatabaseSeeder extends Seeder
                 "name" => "product-list",
                 "name-display" => "Danh sách",
                 "key-code-name" => "product-list",
-                "group" => "product",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 3,
-                "name" => "product-add",
+                "name" => "product-create",
                 "name-display" => "Thêm sản phẩm",
-                "key-code-name" => "product-add",
-                "group" => "product",
+                "key-code-name" => "product-create",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 4,
-                "name" => "product-detail",
+                "name" => "product-show",
                 "name-display" => "Xem sản phẩm",
-                "key-code-name" => "product-detail",
-                "group" => "product",
+                "key-code-name" => "product-show",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 5,
-                "name" => "product-delete",
+                "name" => "product-destroy",
                 "name-display" => "Xóa sản phẩm",
-                "key-code-name" => "product-delete",
-                "group" => "product",
+                "key-code-name" => "product-destroy",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 0,
             ],
             [
@@ -93,7 +109,7 @@ class DatabaseSeeder extends Seeder
                 "name" => "product-update",
                 "name-display" => "Sửa sản phẩm",
                 "key-code-name" => "product-update",
-                "group" => "product",
+                "group" => config("permission.access.PRODUCT-MANAGE"),
                 "is-main" => 0,
             ],
 
@@ -101,10 +117,10 @@ class DatabaseSeeder extends Seeder
 
             [
                 "id" => 7,
-                "name" => "role-manage",
+                "name" => config("permission.access.ROLE-MANAGE"),
                 "name-display" => "Quản lý Vai trò",
                 "key-code-name" => "role-manage",
-                "group" => "role",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 1,
             ],
             [
@@ -112,31 +128,31 @@ class DatabaseSeeder extends Seeder
                 "name" => "role-list",
                 "name-display" => "Danh sách",
                 "key-code-name" => "role-list",
-                "group" => "role",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 9,
-                "name" => "role-add",
+                "name" => "role-create",
                 "name-display" => "Thêm vai trò",
-                "key-code-name" => "role-add",
-                "group" => "role",
+                "key-code-name" => "role-create",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 10,
-                "name" => "role-detail",
+                "name" => "role-show",
                 "name-display" => "Xem vai trò",
-                "key-code-name" => "role-detail",
-                "group" => "role",
+                "key-code-name" => "role-show",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 11,
-                "name" => "role-delete",
+                "name" => "role-destroy",
                 "name-display" => "Xóa vai trò",
-                "key-code-name" => "role-delete",
-                "group" => "role",
+                "key-code-name" => "role-destroy",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 0,
             ],
             [
@@ -144,7 +160,7 @@ class DatabaseSeeder extends Seeder
                 "name" => "role-update",
                 "name-display" => "Sửa vai trò",
                 "key-code-name" => "role-update",
-                "group" => "role",
+                "group" => config("permission.access.ROLE-MANAGE"),
                 "is-main" => 0,
             ],
 
@@ -154,10 +170,10 @@ class DatabaseSeeder extends Seeder
 
             [
                 "id" => 13,
-                "name" => "user-manage",
+                "name" => config("permission.access.USER-MANAGE"),
                 "name-display" => "Quản lý Người dùng",
                 "key-code-name" => "user-manage",
-                "group" => "user",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 1,
             ],
             [
@@ -165,31 +181,31 @@ class DatabaseSeeder extends Seeder
                 "name" => "user-list",
                 "name-display" => "Danh sách",
                 "key-code-name" => "user-list",
-                "group" => "user",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 15,
-                "name" => "user-add",
+                "name" => "user-create",
                 "name-display" => "Thêm Người dùng",
-                "key-code-name" => "user-add",
-                "group" => "user",
+                "key-code-name" => "user-create",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 16,
-                "name" => "user-detail",
+                "name" => "user-show",
                 "name-display" => "Xem Người dùng",
-                "key-code-name" => "user-detail",
-                "group" => "user",
+                "key-code-name" => "user-show",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 0,
             ],
             [
                 "id" => 17,
-                "name" => "user-delete",
+                "name" => "user-destroy",
                 "name-display" => "Xóa Người dùng",
-                "key-code-name" => "user-delete",
-                "group" => "user",
+                "key-code-name" => "user-destroy",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 0,
             ],
             [
@@ -197,7 +213,7 @@ class DatabaseSeeder extends Seeder
                 "name" => "user-update",
                 "name-display" => "Sửa Người dùng",
                 "key-code-name" => "user-update",
-                "group" => "user",
+                "group" => config("permission.access.USER-MANAGE"),
                 "is-main" => 0,
             ],
         ];
@@ -216,8 +232,18 @@ class DatabaseSeeder extends Seeder
                 ],
                 [
                     "id" => 2,
-                    "role_id" => 3,
+                    "role_id" => 2,
                     "user_id" => 2,
+                ],
+                [
+                    "id" => 3,
+                    "role_id" => 3,
+                    "user_id" => 3,
+                ],
+                [
+                    "id" => 4,
+                    "role_id" => 4,
+                    "user_id" => 4,
                 ],
             ]
         );
@@ -314,12 +340,38 @@ class DatabaseSeeder extends Seeder
                     "role_id" => 1,
                     "permission_id" => 18,
                 ],
-
+                ///
                 [
                     "id" => 19,
                     "role_id" => 3,
                     "permission_id" => 2,
-                ]
+                ],
+                [
+                    "id" => 20,
+                    "role_id" => 3,
+                    "permission_id" => 8,
+                ],
+                [
+                    "id" => 21,
+                    "role_id" => 3,
+                    "permission_id" => 14,
+                ],
+                ///
+                [
+                    "id" => 22,
+                    "role_id" => 4,
+                    "permission_id" => 2,
+                ],
+                [
+                    "id" => 23,
+                    "role_id" => 4,
+                    "permission_id" => 8,
+                ],
+                [
+                    "id" => 24,
+                    "role_id" => 4,
+                    "permission_id" => 14,
+                ],
             ]
         );
     }

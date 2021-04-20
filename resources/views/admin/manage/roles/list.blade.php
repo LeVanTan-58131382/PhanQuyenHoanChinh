@@ -16,35 +16,33 @@
 <div class="table-users">
     <div class="col">
         <div class="row-md-12 row-sm-12 row-lg-12">
-        @can(config("permission.access.USER-CREATE"))
-        <a href="{{ route('user.create') }}"><button>Thêm</button></a> 
+        @can(config("permission.access.ROLE-MANAGE"))
+            <a href="{{ route('role.create') }}"><button>Thêm</button></a>
         @endcan
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                     <th scope="col">id</th>
                     <th scope="col">Tên</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Handle</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($users as $user)
+                    @foreach ($roles as $role)
                         <tr>
-                        <th scope="row">{{ $user->id }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <th scope="row">{{ $role->id }}</th>
+                        <td>{{ $role->name }}</td>
                         <td>
                             @can(config("permission.access.USER-SHOW"))
-                                <a href="{{ route('user.show', $user->id) }}"><button>Chi tiết</button></a>
+                                <a href="{{ route('role.show', $role->id) }}"><button>Chi tiết</button></a>
                             @endcan
                             <b>|</b>
                             @can(config("permission.access.USER-UPDATE"))
-                            <a href="{{ route('user.edit', $user->id) }}"><button>Cập nhật</button></a>
+                                <a href="{{ route('role.edit', $role->id) }}"><button>Cập nhật</button></a>
                             @endcan
                             <b>|</b>
                             @can(config("permission.access.USER-DESTROY"))
-                            <button>Xóa</button>
+                                <button>Xóa</button>
                             @endcan
                         </td>
                         </tr>
@@ -53,7 +51,7 @@
             </table>
         </div>
         <div class="row-md-12">
-            {{ $users->links() }}
+            {{ $roles->links() }}
         </div>
     </div>
     </div>

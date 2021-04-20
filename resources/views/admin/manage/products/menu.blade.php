@@ -6,12 +6,12 @@
         <a href="#" class="product-btn">Product
             <span class="fas fa-caret-down product-rotate-icon"></span>
         </a>
-        @can("product-manage")
+        @can(config("permission.access.PRODUCT-MANAGE"))
             <ul class="product-show">
-                @can("product-list")
+                @can(config("permission.access.PRODUCT-LIST"))
                     <li><a href="#">List</a></li>
                 @endcan   
-                @can("product-add")
+                @can(config("permission.access.PRODUCT-CREATE"))
                 <li><a href="#">Add</a></li>
                 @endcan
             </ul>

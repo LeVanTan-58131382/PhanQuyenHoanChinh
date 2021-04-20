@@ -2,25 +2,25 @@
 
 return [
     "access" => [
-        "PRODUCT-MANAGE" => "product",
+        "PRODUCT-MANAGE" => "product-manage",
         "PRODUCT-LIST" => "product-list",
-        "PRODUCT-ADD" => "product-add",
-        "PRODUCT-DETAIL" => "product-detail",
-        "PRODUCT-DELETE" => "product-delete",
+        "PRODUCT-CREATE" => "product-create",
+        "PRODUCT-SHOW" => "product-show",
+        "PRODUCT-DESTROY" => "product-destroy",
         "PRODUCT-UPDATE" => "product-update",
 
-        "USER-MANAGE" => "user",
+        "USER-MANAGE" => "user-manage",
         "USER-LIST" => "user-list",
-        "USER-ADD" => "user-add",
-        "USER-DETAIL" => "user-detail",
-        "USER-DELETE" => "user-delete",
+        "USER-CREATE" => "user-create",
+        "USER-SHOW" => "user-show",
+        "USER-DESTROY" => "user-destroy",
         "USER-UPDATE" => "user-update",
 
-        "ROLE-MANAGE" => "role",
+        "ROLE-MANAGE" => "role-manage",
         "ROLE-LIST" => "role-list",
-        "ROLE-ADD" => "role-add",
-        "ROLE-DETAIL" => "role-detail",
-        "ROLE-DELETE" => "role-delete",
+        "ROLE-CREATE" => "role-create",
+        "ROLE-SHOW" => "role-show",
+        "ROLE-DESTROY" => "role-destroy",
         "ROLE-UPDATE" => "role-update",
     ]
 ];

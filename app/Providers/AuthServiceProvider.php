@@ -38,64 +38,64 @@ class AuthServiceProvider extends ServiceProvider
         // Gate::define("product-list", "App/Policies/ProductPolicy@update");
         // Gate::define("product-list", "App/Policies/ProductPolicy@delete");
 
-        Gate::define("product-manage", function($user){
+        Gate::define(config("permission.access.PRODUCT-MANAGE"), function($user){
             return $user->checkPermissionGroupAccess(config("permission.access.PRODUCT-MANAGE"));
         });
-        Gate::define("product-list", function($user){
+        Gate::define(config("permission.access.PRODUCT-LIST"), function($user){
             return $user->checkPermissionAccess(config("permission.access.PRODUCT-LIST"));
         });
-        Gate::define("product-add", function($user){
-            return $user->checkPermissionAccess(config("permission.access.PRODUCT-ADD"));
+        Gate::define(config("permission.access.PRODUCT-CREATE"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.PRODUCT-CREATE"));
         });
-        Gate::define("product-detail", function($user){
-            return $user->checkPermissionAccess(config("permission.access.PRODUCT-DETAIL"));
+        Gate::define(config("permission.access.PRODUCT-SHOW"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.PRODUCT-SHOW"));
         });
-        Gate::define("product-delete", function($user){
-            return $user->checkPermissionAccess(config("permission.access.PRODUCT-DELETE"));
+        Gate::define(config("permission.access.PRODUCT-DESTROY"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.PRODUCT-DESTROY"));
         });
-        Gate::define("product-update", function($user){
+        Gate::define(config("permission.access.PRODUCT-UPDATE"), function($user){
             return $user->checkPermissionAccess(config("permission.access.PRODUCT-UPDATE"));
         });
 
         //
 
-        Gate::define("role-manage", function($user){
+        Gate::define(config("permission.access.ROLE-MANAGE"), function($user){
             return $user->checkPermissionGroupAccess(config("permission.access.ROLE-MANAGE"));
         });
-        Gate::define("role-list", function($user){
+        Gate::define(config("permission.access.ROLE-LIST"), function($user){
             return $user->checkPermissionAccess(config("permission.access.ROLE-LIST"));
         });
-        Gate::define("role-add", function($user){
-            return $user->checkPermissionAccess(config("permission.access.ROLE-ADD"));
+        Gate::define(config("permission.access.ROLE-CREATE"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.ROLE-CREATE"));
         });
-        Gate::define("role-detail", function($user){
-            return $user->checkPermissionAccess(config("permission.access.ROLE-DETAIL"));
+        Gate::define(config("permission.access.ROLE-SHOW"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.ROLE-SHOW"));
         });
-        Gate::define("role-delete", function($user){
-            return $user->checkPermissionAccess(config("permission.access.ROLE-DELETE"));
+        Gate::define(config("permission.access.ROLE-DESTROY"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.ROLE-DESTROY"));
         });
-        Gate::define("role-update", function($user){
+        Gate::define(config("permission.access.ROLE-UPDATE"), function($user){
             return $user->checkPermissionAccess(config("permission.access.ROLE-UPDATE"));
         });
 
         //
 
-        Gate::define("user-manage", function($user){
+        Gate::define(config("permission.access.USER-MANAGE"), function($user){
             return $user->checkPermissionGroupAccess(config("permission.access.USER-MANAGE"));
         });
-        Gate::define("user-list", function($user){
+        Gate::define(config("permission.access.USER-LIST"), function($user){
             return $user->checkPermissionAccess(config("permission.access.USER-LIST"));
         });
-        Gate::define("user-add", function($user){
-            return $user->checkPermissionAccess(config("permission.access.USER-ADD"));
+        Gate::define(config("permission.access.USER-CREATE"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.USER-CREATE"));
         });
-        Gate::define("user-detail", function($user){
-            return $user->checkPermissionAccess(config("permission.access.USER-DETAIL"));
+        Gate::define(config("permission.access.USER-SHOW"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.USER-SHOW"));
         });
-        Gate::define("user-delete", function($user){
-            return $user->checkPermissionAccess(config("permission.access.USER-DELETE"));
+        Gate::define(config("permission.access.USER-DESTROY"), function($user){
+            return $user->checkPermissionAccess(config("permission.access.USER-DESTROY"));
         });
-        Gate::define("user-update", function($user){
+        Gate::define(config("permission.access.USER-UPDATE"), function($user){
             return $user->checkPermissionAccess(config("permission.access.USER-UPDATE"));
         });
     }

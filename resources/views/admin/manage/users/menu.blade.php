@@ -9,12 +9,12 @@
             <ul class="user-show">
                 <li><a href="#">Quyền</a></li>
 
-                @can("role-manage")
-                    <li><a href="#">Vai trò</a></li>
+                @can(config("permission.access.ROLE-MANAGE"))
+                    <li><a href="{{ route('role.list') }}">Vai trò</a></li>
                 @endcan
                 
-                @can("user-manage")
-                <li><a href="#">Người dùng</a></li>
+                @can(config("permission.access.USER-MANAGE"))
+                <li><a href="{{ route('user.list') }}">Người dùng</a></li>
                 @endcan
             </ul>
         </li>

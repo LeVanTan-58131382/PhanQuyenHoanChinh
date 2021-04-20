@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap"); */
 
 
 body,
@@ -23,7 +23,10 @@ html {
 }
 
 body {
-    background: #242526;
+    /* Open This */
+    /* background: #242526; */
+
+    background: white;
 }
 
 .left-menu-master .btn-left-menu {
@@ -62,7 +65,11 @@ body {
     left: -250px;
     opacity: 0;
     visibility: hidden;
-    background: #1b1b1b;
+
+    /* Open This */
+    /* background: #1b1b1b; */
+
+    background-color: white;
     transition: left 0.4s ease;
 }
 
@@ -78,7 +85,12 @@ body {
     font-weight: 600;
     line-height: 65px;
     text-align: center;
-    background: #1e1e1e;
+
+    /* Open This */
+    /* background: #1e1e1e; */
+
+    background-color: white;
+
     letter-spacing: 1px;
 }
 
@@ -87,7 +99,12 @@ body {
 }
 
 .left-menu-master nav ul {
-    background: #1b1b1b;
+
+    /* Open This */
+    /* background: #1b1b1b; */
+
+    background-color: grey;
+
     height: 100%;
     width: 100%;
     list-style: none;
@@ -199,7 +216,11 @@ body {
 .top-nav-master {
     width: 100%;
     height: 60px;
-    background: #242526;
+
+    /* Open This */
+    /* background: #242526; */
+
+    background-color: grey;
 }
 
 .top-nav-master nav {
@@ -208,7 +229,11 @@ body {
     z-index: 99;
     width: 100%;
     height: 60px;
-    background: #242526;
+
+    /* Open This */
+    /* background: #242526; */
+
+    background-color: grey;
 }
 
 .top-nav-master nav .wrapper {

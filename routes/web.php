@@ -38,20 +38,20 @@ Route::prefix("product") -> group( function(){
     "uses" => "Admin\ProductController@list",
     "middleware" => "can:product-list"
    ]);
-   Route::get("/add", [
-    "as" => "product.add",
-    "uses" => "Admin\ProductController@add",
-    "middleware" => "can:product-add"
+   Route::get("/create", [
+    "as" => "product.create",
+    "uses" => "Admin\ProductController@create",
+    "middleware" => "can:product-create"
    ]);
-   Route::get("/detail/{id}", [
-    "as" => "product.detail",
-    "uses" => "Admin\ProductController@detail",
-    "middleware" => "can:product-detail"
+   Route::get("/show/{id}", [
+    "as" => "product.show",
+    "uses" => "Admin\ProductController@show",
+    "middleware" => "can:product-show"
    ]);
-   Route::get("/delete/{id}", [
-    "as" => "product.delete",
-    "uses" => "Admin\ProductController@delete",
-    "middleware" => "can:product-delete"
+   Route::get("/destroy/{id}", [
+    "as" => "product.destroy",
+    "uses" => "Admin\ProductController@destroy",
+    "middleware" => "can:product-destroy"
    ]);
 });
 
@@ -61,20 +61,35 @@ Route::prefix("role") -> group( function(){
      "uses" => "Admin\RoleController@list",
      "middleware" => "can:role-list"
     ]);
-    Route::get("/add", [
-     "as" => "role.add",
-     "uses" => "Admin\RoleController@add",
-     "middleware" => "can:role-add"
+    Route::get("/create", [
+     "as" => "role.create",
+     "uses" => "Admin\RoleController@create",
+     "middleware" => "can:role-create"
     ]);
-    Route::get("/detail/{id}", [
-     "as" => "role.detail",
-     "uses" => "Admin\RoleController@detail",
-     "middleware" => "can:role-detail"
+    Route::post("/store", [
+      "as" => "role.store",
+      "uses" => "Admin\RoleController@store",
+      "middleware" => "can:role-create"
+     ]);
+    Route::get("/show/{id}", [
+     "as" => "role.show",
+     "uses" => "Admin\RoleController@show",
+     "middleware" => "can:role-show"
     ]);
-    Route::get("/delete/{id}", [
-     "as" => "role.delete",
-     "uses" => "Admin\RoleController@delete",
-     "middleware" => "can:role-delete"
+    Route::get("/edit/{id}", [
+      "as" => "role.edit",
+      "uses" => "Admin\RoleController@edit",
+      "middleware" => "can:role-update"
+     ]);
+     Route::post("/update/{id}", [
+      "as" => "role.update",
+      "uses" => "Admin\RoleController@update",
+      "middleware" => "can:role-update"
+     ]);
+    Route::post("/destroy/{id}", [
+     "as" => "role.destroy",
+     "uses" => "Admin\RoleController@destroy",
+     "middleware" => "can:role-destroy"
     ]);
  });
 
@@ -84,19 +99,34 @@ Route::prefix("role") -> group( function(){
      "uses" => "Admin\UserController@list",
      "middleware" => "can:user-list"
     ]);
-    Route::get("/add", [
-     "as" => "user.add",
-     "uses" => "Admin\UserController@add",
-     "middleware" => "can:user-add"
+    Route::get("/create", [
+     "as" => "user.create",
+     "uses" => "Admin\UserController@create",
+     "middleware" => "can:user-create"
     ]);
-    Route::get("/detail/{id}", [
-     "as" => "user.detail",
-     "uses" => "Admin\UserController@detail",
-     "middleware" => "can:user-detail"
+    Route::post("/store", [
+      "as" => "user.store",
+      "uses" => "Admin\UserController@store",
+      "middleware" => "can:user-create"
+     ]);
+    Route::get("/show/{id}", [
+     "as" => "user.show",
+     "uses" => "Admin\UserController@show",
+     "middleware" => "can:user-show"
     ]);
-    Route::get("/delete/{id}", [
-     "as" => "user.delete",
-     "uses" => "Admin\UserController@delete",
-     "middleware" => "can:user-delete"
+    Route::get("/edit/{id}", [
+      "as" => "user.edit",
+      "uses" => "Admin\UserController@edit",
+      "middleware" => "can:user-update"
+     ]);
+     Route::post("/update/{id}", [
+      "as" => "user.update",
+      "uses" => "Admin\UserController@update",
+      "middleware" => "can:user-update"
+     ]);
+    Route::post("/destroy/{id}", [
+     "as" => "user.destroy",
+     "uses" => "Admin\UserController@destroy",
+     "middleware" => "can:user-destroy"
     ]);
  });
