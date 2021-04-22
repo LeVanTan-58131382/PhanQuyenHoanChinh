@@ -132,7 +132,8 @@ body {
 }
 
 .left-menu-master nav ul li.active a {
-    color: cyan;
+    /* Open This */
+    /* color: cyan; */
     background: #1e1e1e;
     border-left-color: cyan;
 }
@@ -174,7 +175,8 @@ body {
 }
 
 .left-menu-master nav ul ul li a:hover {
-    color: cyan !important;
+    /* Open This */
+    /* color: cyan !important; */
     background: #1e1e1e !important;
 }
 

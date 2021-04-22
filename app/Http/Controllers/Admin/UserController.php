@@ -9,6 +9,8 @@ use App\Models\Role;
 use App\Services\User\UserService;
 use App\Services\Role\RoleService;
 
+use App\Services\LogActivity\LogActivityService;
+
 use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
@@ -17,12 +19,14 @@ class UserController extends Controller
     private $user;
     private $userService;
     private $roleService;
+    private $logActivityService;
 
-    public function __construct(User $user, UserService $userService, RoleService $roleService)
+    public function __construct(User $user, UserService $userService, RoleService $roleService, LogActivityService $logActivityService)
     {
         $this->user = $user;
         $this->userService = $userService;
         $this->roleService = $roleService;
+        $this->logActivityService = $logActivityService;
     }
 
     public function list()
@@ -53,6 +57,7 @@ class UserController extends Controller
     {
         
         $this->userService->create($request);
+        $this->logActivityService->addToLog($request, "Người dùng vừa tạo một user mới");
         
     }
 
@@ -65,6 +70,8 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $user = $this->userService->getUserById($id);
+        return view("admin.manage.users.show", compact('user'));
     }
 
     /**
@@ -92,6 +99,7 @@ class UserController extends Controller
     {
         //
         $this->userService->update($request, $id);
+        $this->logActivityService->addToLog($request, "Người dùng vừa cập nhật một user có id là " . $id);
     }
 
     /**
@@ -103,5 +111,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = $this->userService->getUserById($id);
+        $user->delete();
+        $this->logActivityService->addToLog($request, "Người dùng vừa xóa một user có id là " . $id);
+
     }
 }
